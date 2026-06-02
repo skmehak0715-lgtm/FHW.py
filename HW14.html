@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW14</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+            text-align: center;
+            color: #222222;
+        }
+
+        h1 {
+            color: darkgreen
+        }
+
+        #Zoo {
+            width: 420px;
+            border: 3px solid darkgreen;
+            border-radius: 12px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        .zone {
+            border: 2px solid seagreen;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 12px;
+            background-color: #f0fff0;
+            text-align: left;
+        }
+
+        .animal {
+            font-weight: bold;
+            color: darkgreen;
+                }
+
+                button {
+                    background-color: darkgreen;
+                    color: white;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 10px;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+
+                #output {
+                    width: 450px;
+                    border: 2px dashed darkgreen;
+                    border-radius: 10px;
+                    background-color: #ffffff;
+                    margin: 20px auto;
+                    padding: 12px;
+                    text-align: left;
+                }
+    </style>
+</head>
+<body>
+    <h1>My Digital zoo manager</h1>
+    <p>
+        Use JavaScript and the DOM to explore  animals, zones, parent nodes, child nodes, and sibling nodes.
+    </p>
+
+    <div id="zoo">
+
+        <div class="zone" id="lionzone">
+            <h2>lion zone</h2>
+            <p>Animal: <span
+            class="animal">lion</span></p>
+        </div>
+
+        <div class="zone" id="elephantzone">
+            <h2>elephant zone</h2>
+            <p>Animal: <span
+           class="animal">elephant</span></p>
+        </div>
+
+        <div class="zone" id="pandazone">
+            <h2>panda zone</h2>
+            <p>Animal: <span
+            class="animal">panda</span></p>
+        </div>
+
+    </div>
+
+    <button onclick="managezoo()">ManagerZoo</button>
+
+    <div id="output">
+        Zoo information will appear here.
+    </div>
+
+    <script>
+        function managezoo() {
+
+            //HTML DOW: Selecting elements from
+        The Webpage
+              let Zoo =
+    document.getElementById("zoo");
+              let lionzone =
+    document.getElementById("lionzone");
+              let elephantzone =
+    document.getElementById("elephantzone");
+              let pandazone =
+    document.getElementById("pandazoo");
+              let output =
+    document.getElementById("output");
+
+    // the dom tree: zoo is the parent
+ container of all animal zones
+       let parentnobename = 
+       lionzone.parentNode.id;
+
+       //parent, child, and Sibling nobes
+       let firstchildzone = 
+ zoo.Children[0].id;
+        let secondcildzone = 
+ zoo.Children[1].id;
+        let nextSiblingzone =
+ lionzone.nextElementSibling.id;
+       let previoustSibilingzone = 
+ pandazone.previousElementSibling.id;
+
+       // type of nobes
+       let elephantzodetype = 
+  lionzone.nodeType = 
+        let textnonetype = 
+  lionzone.firstChild.nodeType;
+  
+       // JavaScript and the dom: changing content and style
+        lionzone.style.backgroundColor = "#fff3cd";
+        elephantzone.style.backgroundColor = "#d1ecf1";
+        pandazone.style.backgroundColor = "#f8d7da";
+
+
+        lionzone.querySelector("h2").innerHTML = "updated lion zone";
+
+        elephantzone.querySelector("h2").innerHTML = "updated elephant panda zone";
+
+        pandazone.querySelector("h2").innerHTML = "updated panda zone";
+
+         output.innerHTML = 
+         "<strong>dom tree information:
+                </Storong><br>" +
+              "parent of lion zone: " +
+          parentnobename + "<br>" + 
+              "first child of zoo: " +
+          firstchildzone + "<br>" +  
+              "second child of lion zone: " +
+          secondcildzone + "<br><br>" +
+          
+             "<second>Sibling nobe information:</second><br>" +
+        "next sibling of lion zone: " +
+    nextSiblingzone + "<br><br>" +
+               "previous sibling of zone: "
+    + previoustSibilingzone + "<br><br>" +
+    
+              <Strong>types of nodes:</Strong>
+              <br>" +
+              "lion zone  elephant nodes type: " +
+              elephantzodetype + "<br>" +
+              "lion zone first child text : " + textnonetype + "<br><br>" +
+
+              "<Strong>DOM update:</Strong><br>" +
+
+               "the animal zone headings and background colours were updated using JavaScript.";````````````````````
+        }
+    </script>
+
+</body>
+</html>
